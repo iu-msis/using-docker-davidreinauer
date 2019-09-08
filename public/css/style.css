@@ -27,11 +27,12 @@ body {
   margin-left: 10%;
   margin-right: 10%;
 }
-.table-hover {
+/* .table-hover {
   hover: lightblue;
   border-style: solid;
   border-color: lightgray;
-}
+} */
+
 .info {
   background-color: white;
   border: gray;
