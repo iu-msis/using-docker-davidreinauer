@@ -95,6 +95,8 @@ ul.nav a:hover {
   color: navy !important;
 }
 
+/* css from http://tristen.ca/tablesort/demo/ */
+
 th[role=columnheader]:not(.no-sort) {
 	cursor: pointer;
 }
