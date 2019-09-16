@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
 
 
-    <title>About me</title>
+    <title>Profile</title>
   <header>
     <div>
         <nav class="navbar navbar-default navbar-expand-lg navbar-light bg-light row">
@@ -46,33 +46,32 @@
   </head>
   <body>
 
-    <h1>Welcome to my website!<br>It shows me doing some of my favorite hobbies.
-      <br>I hope you enjoy getting to know me more!</h1>
+    <h1>Welcome to my website!<br>
+    You will see constantly changing User information!</h1>
 
-    <div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <p><strong>Background and personal info:</strong><br><br>
-          Name: James Earl Jones<br>
-          DoB: January 17, 1931<br>
-          Country of Origin: United States<br>
-          </p>
+    <div id="randomUserGen" class="row">
+        <div v-for="user in users" class="container container-fluid col-lg-6 col-md-6 col-sm-6 col-xs-12 image-container">
+            <a v-bind:href="user.picture.large">
+              <img v-bind:src="user.picture.large" class="img-thumbnail img" alt="Me!" width="200">
+              <a :href="user.picture.large" class="image-attribute">Source</a>
+            </a>
         </div>
 
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <img src="pictures/DS_me-playing-tennis.jpg"
-           class="img-thumbnail img" alt="Me playing tennis" width="300">
-           <p class="boxed-paragraph">This is me playing Tennis!</p>
+        <div class="container container-fluid
+          col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div v-for="user in users" class="user userName">
+            <p><br><strong>Profile info</strong><br>
+            <p>Name: {{ user.name.first }}</p>
+            <p>Surname: {{ user.name.last }}</p>
+            <p>DoB: {{ user.dob.date }}</p>
+            <p>Age: {{ user.dob.age }}</p>
+            <p>Country of Origin: {{ user.nat }}</span></p>
+            <p>Email: <a href="mailto:mystudentmail@iu.edu?subject=feedback">{{ user.email }}</a></p>
+          </div>
         </div>
+      </div>
 
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <img src="pictures/DS_me-hiking.jpg"
-          class="img-thumbnail img" alt="Me hiking a mountain" width="300">
-          <p class="boxed-paragraph">And this is me on a hiking trip!</p>
-        </div>
-        <hr>
-    </div>
-
-    <div class="poem col-lg-12 col-md-12 col-sm-12 col-xs-12 headervert centeralign"><p>
+    <div class="poem col-lg-8 col-md-8 col-sm-8 col-xs-8 headervert centeralign"><p>
           <div>
               <strong style="color:navy;"><bold>Ironic</bold></strong><br>
               We cut trees
@@ -108,6 +107,10 @@
             <a href="https://hellopoetry.com/words/ironic/">Source</a>
           </div>
       </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/randomuser.js"></script>
+
   </body>
 
   <footer>

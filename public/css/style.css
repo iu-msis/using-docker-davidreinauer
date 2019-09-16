@@ -83,12 +83,28 @@ footer {
   padding: 5px;
 }
 
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-attribute {
+  position: absolute;
+  bottom: 0;
+  color: navy;
+  font-size: 10px;
+}
 .centeralign {
-    text-align: CENTER
+    posotion: absolute;
+    text-align: center;
 }
 
 .navbar-default a {
     color: rgb(22, 180, 221) !important;
+}
+
+.userName {
+  font-weight: bold;
 }
 
 ul.nav a:hover {
