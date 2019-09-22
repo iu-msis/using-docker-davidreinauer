@@ -49,29 +49,33 @@
     <h1>Welcome to my website!<br>
     You will see constantly changing User information!</h1>
 
-    <div id="randomUserGen" class="row">
-        <div v-for="user in users" class="container container-fluid col-lg-6 col-md-6 col-sm-6 col-xs-12 image-container">
+    <div id="randomUserGen" class="row" v-for="user in users">
+        <div class="container container-fluid col-lg-6 col-md-6 col-sm-6 col-xs-12 image-container">
             <a v-bind:href="user.picture.large">
               <img v-bind:src="user.picture.large" class="img-thumbnail img" alt="Me!" width="200">
               <a :href="user.picture.large" class="image-attribute">Source</a>
             </a>
         </div>
 
-        <div class="container container-fluid
-          col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div v-for="user in users" class="user userName">
-            <p><br><strong>Profile info</strong><br>
-            <p>Name: {{ user.name.first }}</p>
-            <p>Surname: {{ user.name.last }}</p>
-            <p>DoB: {{ user.dob.date }}</p>
-            <p>Age: {{ user.dob.age }}</p>
-            <p>Country of Origin: {{ user.nat }}</span></p>
-            <p>Email: <a href="mailto:mystudentmail@iu.edu?subject=feedback">{{ user.email }}</a></p>
-          </div>
-        </div>
-      </div>
+        <div class="container container-fluid col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <form @submit="fetchUser">
+            <div v-for="user in users" class="user userName">
+              <p><br><strong>Profile info</strong><br>
+              <p>Name: {{ user.name.first }}</p>
+              <p>Surname: {{ user.name.last }}</p>
+              <p>DoB: {{ user.dob.date }}</p>
+              <p>Age: {{ user.dob.age }}</p>
+              <p>Country of Origin: {{ user.nat }}</span></p>
+              <p>Email: <a href="mailto:mystudentmail@iu.edu?subject=feedback">{{ user.email }}</a></p>
+              <button v-on:submit.prevent="fetchUser"
+              type="submit" class="btn btn-primary">Refresh Data</button>
+            </div>
+        </form>
 
-    <div class="poem col-lg-8 col-md-8 col-sm-8 col-xs-8 headervert centeralign"><p>
+      </div>
+    </div>
+<br>
+    <div class="poem col-lg-12 col-md-12 col-sm-12 col-xs-12 headervert centeralign"><p>
           <div>
               <strong style="color:navy;"><bold>Ironic</bold></strong><br>
               We cut trees

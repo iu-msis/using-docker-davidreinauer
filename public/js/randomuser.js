@@ -31,8 +31,8 @@ methods: {              //where you store all the methods used in the applicatio
   fetchUser() {     //definition of fetchPatients function
     fetch('https://randomuser.me/api/')
     .then(response => response.json())
-    .then(json => {randomUser.users = json.results})
-  }
+    .then(json => {randomUser.users = json.results});
+  },
 },
 
   created() {
